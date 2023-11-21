@@ -1,30 +1,27 @@
-#!/usr/bin/python3
-"""Access and update private attribute"""
-
-
 class Square:
     """Private instance attribute: size
-    Instantiation with area method """
+    Instantiation with area method"""
 
     def __init__(self, size=0):
-        """Initializes attribute size """
+        """Initializes attribute size"""
         self.__size = size
 
     def area(self):
         """Calculate area of square"""
-        return (self.__size * self.__size)
+        return self.__size * self.__size
 
     @property
-    def size(self):
-        """Setter for square"""
+    def _size(self):
+        """Getter for square"""
         return self.__size
 
-    @size.setter
+    @_size.setter
     def size(self, value):
-        """Initializes attribute size """
-        if (type(value) is not int):
-            raise TypeError("size must be an integer")
+        """Setter for square"""
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer, not {}".format(type(value).__name__))
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
