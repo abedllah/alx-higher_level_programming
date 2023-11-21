@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Filename:  0-square"""
+"""creating class square """
+
 
 
 class Square:
-    """An empty class Square that defines a square:"""
-    def __init__(self,size):
-    """Initializes private attribute size """
-        self.__size=size
+    """the body of the class """
+    def __init__(self, size):
+        """Initializes a new Square """
+        self.__size = size
