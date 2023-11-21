@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-"""creating class square """
-
+"""Access and update private attribute"""
 
 
 class Square:
-    """the body of the class """
+    """Private instance attribute: size
+    Instantiation with area method """
+
     def __init__(self, size=0):
-        """Initializes a new Square """
+        """Initializes attribute size """
         self.__size = size
 
-     def area(self):
-        """Public instance method"""
-        return (self.__size ** 2)
+    def area(self):
+        """Calculate area of square"""
+        return (self.__size * self.__size)
 
-     @property
+    @property
     def size(self):
         """Setter for square"""
         return self.__size
