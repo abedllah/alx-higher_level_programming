@@ -1,10 +1,16 @@
 #!/usr/bin/python3
-"""write_file: write_file()"""
+"""
+    1-write_file: write_file()
+"""
 
-def number_of_lines(filename=""):
-    """my function"""
-    cont = 0
-    with open(filename, 'r') as f:
-        for li in f:
-            cont += 1
-    return cont
+
+def write_file(filename="", text=""):
+    """
+        write_file writes a string to a text file.
+        Args:
+            filename (str): name of file.
+            text (str): text to be written.
+        Returns: number of bytes written.
+    """
+    with open(filename, "w", encoding='utf-8') as a_file:
+        return a_file.write(text)
