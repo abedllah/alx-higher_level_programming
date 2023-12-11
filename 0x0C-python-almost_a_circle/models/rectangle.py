@@ -97,12 +97,13 @@ class Rectangle(Base):
             .format(self.id, self.x, self.y, self.width, self.height)
 
      def update(self, *args, **kwargs):
-        """update rectangle attribute """
+        """update rectangle attributes
+        """
 
         expect = (self.id, self.width, self.height, self.x, self.y)
         if args != ():
             self.id, self.width, self.height, self.x, self.y = \
                 args + expect[len(args):len(expect)]
         elif kwargs:
-            for key, value in kwargs.items():
-            setattr(self, key, value)
+            for (name, value) in kwargs.items():
+                setattr(self, name, value)
