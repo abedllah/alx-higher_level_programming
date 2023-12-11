@@ -99,19 +99,10 @@ class Rectangle(Base):
      def update(self, *args, **kwargs):
         """update rectangle attribute """
 
-        if args:
-
-            for i, arg in enumerate(args):
-                if i == 0:
-                    self.id = arg
-                elif i == 1:
-                    self.width = arg
-                elif i == 2:
-                    self.height = arg
-                elif i == 3:
-                    self.x = arg
-                elif i == 4:
-                    self.y = arg
-
-        for key, value in kwargs.items():
+        expect = (self.id, self.width, self.height, self.x, self.y)
+        if args != ():
+            self.id, self.width, self.height, self.x, self.y = \
+                args + expect[len(args):len(expect)]
+        elif kwargs:
+            for key, value in kwargs.items():
             setattr(self, key, value)
