@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """defines a base modul class"""
 
+import json
+
 class Base:
     """the base model."""
 
